@@ -28,11 +28,6 @@ const AboutQuotes = [
 ]
 
 export {
-    navItems,
     bentoSocialLinks,
-    iconsList,
-    slides,
-    testimonials,
-    footerIconsList,
     AboutQuotes,
 };
