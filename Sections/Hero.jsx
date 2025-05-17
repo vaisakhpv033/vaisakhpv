@@ -1,8 +1,8 @@
 import { ArrowDown } from 'lucide-react'
 import BlurText from '@/Components/BlurText';
 import GradientSphere from '@/Components/GradientSphere';
-import Particles from '@/Components/Particles';
 import SplashCursorWrapper from '@/Components/SplashCursorWrapper';
+import ParticlesWrapper from '@/Components/ParticlesWrapper';
 
 const Hero = () => {
 
@@ -13,20 +13,10 @@ const Hero = () => {
         <SplashCursorWrapper />
         <div className='w-full h-full flex-center'>
             <div className="container relative w-full h-full">
-                <Particles
-                particleColors={['#ffffff', '#ffffff']}
-                particleCount={900}
-                particleSpread={15}
-                speed={0.1}
-                particleBaseSize={100}
-                moveParticlesOnHover={true}
-                alphaParticles={true}
-                disableRotation={false}
-                className="bg-transparent"
-              />
+              <ParticlesWrapper />
         
                 <div className="md:mt-40 mt-20 top-0 absolute">
-                  <p className='font-medium md:text-2xl text-base md:px-5'>"Hey all I'm"</p> 
+                  <p className='font-medium md:text-2xl text-base md:px-5'>Hey there I'm</p> 
                   <BlurText
                     text="VAISAKH P V"
                     delay={250}
