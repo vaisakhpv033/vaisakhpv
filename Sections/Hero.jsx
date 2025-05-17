@@ -1,5 +1,3 @@
-'use client';
-import React, {useState, useEffect, useRef} from 'react'
 import { ArrowDown } from 'lucide-react'
 import BlurText from '@/Components/BlurText';
 import SplashCursor from '@/Components/SplashCursor';
@@ -7,30 +5,12 @@ import GradientSphere from '@/Components/GradientSphere';
 import Particles from '@/Components/Particles';
 
 const Hero = () => {
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [isInView, setIsInView] = useState(false);
-  const heroRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
-    }, {threshold: 0.5});
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
-    };
-  }, []);
 
   return (
-    <section id='home' ref={heroRef} className='h-dvh relative text-white-50 px-5 md:px-2'>
+    <section id='home' className='h-dvh relative text-white-50 px-5 md:px-2'>
         <GradientSphere sphere1Glass={"gradient-sphere sphere-1"} sphere2Glass="gradient-sphere sphere-2"/>
-        {isInView && <SplashCursor />}
+        <SplashCursor />
         <div className='w-full h-full flex-center'>
             <div className="container relative w-full h-full">
                 <Particles
@@ -46,13 +26,12 @@ const Hero = () => {
               />
         
                 <div className="md:mt-40 mt-20 top-0 absolute">
-                  <p className='font-medium md:text-2xl text-base md:px-5'>{!isAnimating && "Hey all I'm"}</p> 
+                  <p className='font-medium md:text-2xl text-base md:px-5'>"Hey all I'm"</p> 
                   <BlurText
                     text="VAISAKH P V"
                     delay={250}
                     animateBy="letters"
                     direction="top"
-                    onAnimationComplete={() => setIsAnimating(false)}
                     className="font-bold md:text-9xl text-5xl md:px-5"
                   />
                   <h1 className='font-bold md:text-8xl text-5xl md:px-5 gradient-title'>FULL STACK</h1>
