@@ -1,8 +1,8 @@
 import { ArrowDown } from 'lucide-react'
 import BlurText from '@/Components/BlurText';
-import SplashCursor from '@/Components/SplashCursor';
 import GradientSphere from '@/Components/GradientSphere';
 import Particles from '@/Components/Particles';
+import SplashCursorWrapper from '@/Components/SplashCursorWrapper';
 
 const Hero = () => {
 
@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section id='home' className='h-dvh relative text-white-50 px-5 md:px-2'>
         <GradientSphere sphere1Glass={"gradient-sphere sphere-1"} sphere2Glass="gradient-sphere sphere-2"/>
-        <SplashCursor />
+        <SplashCursorWrapper />
         <div className='w-full h-full flex-center'>
             <div className="container relative w-full h-full">
                 <Particles
